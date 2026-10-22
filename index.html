@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Técnico Superior - Innovación Tecnológica</title>
+    <!-- Framework CSS Externo: Bootstrap 5 -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <!-- Hoja de Estilos Externa Personalizada -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Estilos Internos (Justificación: Correcciones críticas de renderizado inmediato) -->
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0, 42, 92, 0.85), rgba(0, 42, 92, 0.85)), url('https://unsplash.com') no-repeat center center/cover;
+            color: #ffffff;
+            padding: 100px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABECERA Y NAVEGACIÓN (Flexbox nativo mediante Bootstrap) -->
+    <header class="bg-white shadow-sm sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light container">
+            <a class="navbar-brand fw-bold text-primary" href="#">TEC-SUPERIOR</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#programas">Programas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
+                    <li class="nav-item"><a class="btn btn-primary text-white" href="#registro">Postular Ahora</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CUERPO PRINCIPAL -->
+    <main>
+        <!-- Sección 1: Hero Banner (Inicio) -->
+        <section id="inicio" class="hero-section text-center">
+            <div class="container">
+                <h1 class="display-4 fw-bold mb-3">Forma tu futuro con educación de calidad</h1>
+                <p class="lead mb-4">Programas técnicos superiores diseñados para impulsar tu desarrollo profesional y personal.</p>
+                <a href="#registro" class="btn btn-warning btn-lg fw-bold text-dark">Conoce nuestros programas</a>
+            </div>
+        </section>
+
+        <!-- Sección 2: Programas Académicos (Implementación de CSS Grid) -->
+        <section id="programas" class="container my-5 py-4">
+            <h2 class="text-center fw-bold text-dark mb-4">Nuestros Programas Destacados</h2>
+            <div class="programas-grid">
+                <!-- Tarjeta 1 (Bootstrap + Grid Custom) -->
+                <div class="card h-100 shadow-sm edge-card">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">Tecnología</span>
+                        <h5 class="card-title fw-bold">Desarrollo de Software</h5>
+                        <p class="card-text text-muted">Aprende a crear soluciones web, móviles y de escritorio utilizando metodologías ágiles.</p>
+                    </div>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="card h-100 shadow-sm edge-card">
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">Gestión</span>
+                        <h5 class="card-title fw-bold">Administración de Empresas</h5>
+                        <p class="card-text text-muted">Gestiona organizaciones con una visión estratégica, innovadora y orientada al mercado global.</p>
+                    </div>
+                </div>
+                <!-- Tarjeta 3 -->
+                <div class="card h-100 shadow-sm edge-card">
+                    <div class="card-body">
+                        <span class="badge bg-danger mb-2">Ingeniería</span>
+                        <h5 class="card-title fw-bold">Redes y Telecomunicaciones</h5>
+                        <p class="card-text text-muted">Diseña, implementa y asegura infraestructuras de conectividad robustas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Formulario de Registro (Captación) -->
+        <section id="registro" class="bg-light py-5">
+            <div class="container style-form-container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="bg-white p-5 rounded shadow-sm">
+                            <h3 class="text-center fw-bold mb-2">Regístrate Ahora</h3>
+                            <p class="text-center text-muted mb-4">Déjanos tus datos para brindarte asesoría académica personalizada.</p>
+                            
+                            <!-- Alerta Dinámica de JavaScript -->
+                            <div id="alertContenedor"></div>
+
+                            <!-- Formulario Web Funcional -->
+                            <form id="formPostulacion" novalidate>
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Nombre Completo</label>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Ej. Juan Pérez">
+                                    <div class="invalid-feedback">Por favor, ingresa tu nombre completo (mínimo 3 caracteres).</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="correo" class="form-label">Correo Electrónico</label>
+                                        <input type="email" class="form-control" id="correo" placeholder="juan@ejemplo.com">
+                                        <div class="invalid-feedback">Ingresa un correo electrónico corporativo o personal válido.</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="telefono" class="form-label">Teléfono Celular</label>
+                                        <input type="tel" class="form-control" id="telefono" placeholder="987654321">
+                                        <div class="invalid-feedback">El teléfono debe contener exactamente 9 dígitos numéricos.</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="programa" class="form-label">Programa de Interés</label>
+                                    <select class="form-select" id="programa">
+                                        <option value="">-- Selecciona una opción --</option>
+                                        <option value="software">Desarrollo de Software</option>
+                                        <option value="administracion">Administración de Empresas</option>
+                                        <option value="redes">Redes y Telecomunicaciones</option>
+                                    </select>
+                                    <div class="invalid-feedback">Por favor, selecciona una carrera de tu interés.</div>
+                                </div>
+                                <div class="mb-4 form-check">
+                                    <input type="checkbox" class="form-check-input" id="terminos">
+                                    <label class="form-check-label" for="terminos">Acepto los términos y condiciones de privacidad.</label>
+                                    <div class="invalid-feedback">Debes aceptar los términos para continuar.</div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Enviar mi Solicitud</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   
+
+    <!-- Integración del Script de Bootstrap y Lógica JS Externa con 'defer' -->
+    <script src="https://jsdelivr.net"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
